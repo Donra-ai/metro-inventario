@@ -38,7 +38,7 @@ export function ComicHeader({
       <div className="bg-[#111111] text-[#FFD100] px-4 py-1.5 text-xs sm:text-sm font-bangers flex justify-between items-center tracking-widest uppercase overflow-x-auto">
         <div className="flex items-center gap-2 whitespace-nowrap">
           <span className="bg-[#E52521] text-white px-2 py-0.5 rounded text-xs animate-comic-pulse">
-            METRO INVENTARIO // OFICIAL
+            LIBRETA DE ESTACIONES // OFICIAL
           </span>
           <span>VALLE DE ABURRÁ • MEDELLÍN • SISTEMA DE GESTIÓN DE SEGURIDAD & EMERGENCIAS</span>
         </div>
@@ -53,28 +53,15 @@ export function ComicHeader({
 
       {/* Main Header Row */}
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row items-center justify-between gap-4">
-        {/* Logo and Comic Title */}
+        {/* Title & Branding */}
         <div className="flex items-center gap-3">
-          <a
-            href="https://www.metrodemedellin.gov.co"
-            target="_blank"
-            rel="noreferrer"
-            className="w-14 h-14 bg-[#008752] border-4 border-black comic-shadow flex items-center justify-center rotate-[-3deg] hover:rotate-0 transition-transform overflow-hidden p-1.5 cursor-pointer bg-white"
-            title="Ir al sitio oficial de Metro de Medellín"
-          >
-            <img
-              src="https://www.metrodemedellin.gov.co/hubfs/Logo.svg"
-              alt="Metro de Medellín"
-              className="w-full h-full object-contain"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-          </a>
+          <div className="w-12 h-12 bg-[#FFD100] border-4 border-black comic-shadow flex items-center justify-center rotate-[-3deg] text-2xl font-bangers select-none">
+            📖
+          </div>
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-3xl sm:text-4xl font-bangers text-[#111111] leading-none tracking-wider drop-shadow-[2px_2px_0px_#FFD100]">
-                METRO INVENTARIO
+                LIBRETA DE ESTACIONES
               </h1>
               <span className="bg-[#008752] text-white text-xs font-bangers px-2 py-0.5 border-2 border-black rotate-2">
                 AUDITORÍA

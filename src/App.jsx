@@ -226,15 +226,15 @@ export function App() {
       <footer className="w-full bg-[#111111] border-t-4 border-black text-white py-6 mt-12">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="flex items-center justify-center md:justify-start gap-3">
-            <div className="w-10 h-10 bg-[#FFD100] border-2 border-black rounded-lg flex items-center justify-center font-bangers text-black text-xl">
-              M
+            <div className="w-10 h-10 bg-[#FFD100] border-2 border-black rounded-lg flex items-center justify-center text-lg select-none">
+              📖
             </div>
             <div>
               <p className="text-sm font-bangers tracking-wider text-[#FFD100]">
-                SISTEMA INTEGRADO DE TRANSPORTE DEL VALLE DE ABURRÁ // METRO DE MEDELLÍN
+                SISTEMA INTEGRADO DE TRANSPORTE DEL VALLE DE ABURRÁ // LÍNEA A
               </p>
               <p className="text-xs font-comic text-gray-400">
-                Metro Inventario // Sistema de Auditoría, Emergencias, Accesibilidad & Torniquetes Cívica
+                Libreta de Estaciones // Sistema de Auditoría, Emergencias, Accesibilidad & Torniquetes Cívica
               </p>
             </div>
           </div>
