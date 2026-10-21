@@ -95,7 +95,7 @@ export function ComicStationMap({ station, onSelectItem }) {
         <div>
           <div className="flex items-center gap-2">
             <span className="bg-[#E52521] text-white font-bangers text-xs px-2 py-0.5 border-2 border-black rotate-[-2deg]">
-              PLANO ARQUITECTÓNICO CÓMIC
+              PLANO ARQUITECTÓNICO // MAPA INTERACTIVO
             </span>
             <span className="text-xs font-mono font-bold text-gray-500 uppercase">
               SECCIÓN ISOMÉTRICA // {station.name.toUpperCase()}

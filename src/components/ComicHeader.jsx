@@ -38,7 +38,7 @@ export function ComicHeader({
       <div className="bg-[#111111] text-[#FFD100] px-4 py-1.5 text-xs sm:text-sm font-bangers flex justify-between items-center tracking-widest uppercase overflow-x-auto">
         <div className="flex items-center gap-2 whitespace-nowrap">
           <span className="bg-[#E52521] text-white px-2 py-0.5 rounded text-xs animate-comic-pulse">
-            EDICIÓN CÓMIC // OFICIAL
+            METRO INVENTARIO // OFICIAL
           </span>
           <span>VALLE DE ABURRÁ • MEDELLÍN • SISTEMA DE GESTIÓN DE SEGURIDAD & EMERGENCIAS</span>
         </div>
@@ -74,14 +74,14 @@ export function ComicHeader({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-3xl sm:text-4xl font-bangers text-[#111111] leading-none tracking-wider drop-shadow-[2px_2px_0px_#FFD100]">
-                METRO CÓMIC
+                METRO INVENTARIO
               </h1>
-              <span className="bg-[#E52521] text-white text-xs font-bangers px-2 py-0.5 border-2 border-black rotate-3">
-                ¡INSPECTOR!
+              <span className="bg-[#008752] text-white text-xs font-bangers px-2 py-0.5 border-2 border-black rotate-2">
+                AUDITORÍA
               </span>
             </div>
             <p className="text-xs sm:text-sm font-comic font-bold text-gray-700">
-              Verificación de Emergencias, Accesibilidad, Cultura Metro & Cívica
+              Inventario de Emergencias, Accesibilidad, Cuartos Técnicos & Cívica
             </p>
           </div>
         </div>

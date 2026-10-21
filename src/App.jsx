@@ -222,7 +222,7 @@ export function App() {
                 SISTEMA INTEGRADO DE TRANSPORTE DEL VALLE DE ABURRÁ // METRO DE MEDELLÍN
               </p>
               <p className="text-xs font-comic text-gray-400">
-                Aplicación Interactiva estilo Cómic de Auditoría, Emergencias, Accesibilidad & Torniquetes Cívica
+                Metro Inventario // Sistema de Auditoría, Emergencias, Accesibilidad & Torniquetes Cívica
               </p>
             </div>
           </div>
