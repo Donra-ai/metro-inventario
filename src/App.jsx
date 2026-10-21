@@ -8,6 +8,7 @@ import { AccessibilityPanel } from './components/AccessibilityPanel';
 import { AccessAndCivicaPanel } from './components/AccessAndCivicaPanel';
 import { ComicDialogueModal } from './components/ComicDialogueModal';
 import { OnomatopoeiaOverlay } from './components/OnomatopoeiaOverlay';
+import { CulturaMetroPanel } from './components/CulturaMetroPanel';
 import { playComicSuccess, playComicClick, playComicPop } from './utils/audioFX';
 import { Train, Sparkles, AlertCircle, Heart, Shield } from 'lucide-react';
 
@@ -191,6 +192,12 @@ export function App() {
         {activeTab === 'accesses' && (
           <AccessAndCivicaPanel
             station={currentStation}
+            onSelectItem={setSelectedItem}
+          />
+        )}
+
+        {activeTab === 'cultura' && (
+          <CulturaMetroPanel
             onSelectItem={setSelectedItem}
           />
         )}

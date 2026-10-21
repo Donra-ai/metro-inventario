@@ -29,6 +29,7 @@ export function ComicHeader({
     { id: 'locative', label: '🏗️ CUARTOS Y LOCATIVAS', badge: `${stats.roomsCount} CUARTOS` },
     { id: 'accessibility', label: '♿ ACCESIBILIDAD PMR', badge: `${currentStation.accessibility.elevatorsCount} ASCENSORES` },
     { id: 'accesses', label: '🎫 ACCESOS Y CÍVICA', badge: `${stats.totalTurnstiles} TORNIQUETES` },
+    { id: 'cultura', label: '💚 CULTURA METRO', badge: 'DECÁLOGO & SITVA' },
   ];
 
   return (
@@ -54,9 +55,22 @@ export function ComicHeader({
       <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col lg:flex-row items-center justify-between gap-4">
         {/* Logo and Comic Title */}
         <div className="flex items-center gap-3">
-          <div className="w-14 h-14 bg-[#008752] border-4 border-black comic-shadow flex items-center justify-center rotate-[-3deg] hover:rotate-0 transition-transform">
-            <Train className="w-8 h-8 text-[#FFD100]" />
-          </div>
+          <a
+            href="https://www.metrodemedellin.gov.co"
+            target="_blank"
+            rel="noreferrer"
+            className="w-14 h-14 bg-[#008752] border-4 border-black comic-shadow flex items-center justify-center rotate-[-3deg] hover:rotate-0 transition-transform overflow-hidden p-1.5 cursor-pointer bg-white"
+            title="Ir al sitio oficial de Metro de Medellín"
+          >
+            <img
+              src="https://www.metrodemedellin.gov.co/hubfs/Logo.svg"
+              alt="Metro de Medellín"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+          </a>
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-3xl sm:text-4xl font-bangers text-[#111111] leading-none tracking-wider drop-shadow-[2px_2px_0px_#FFD100]">
@@ -67,7 +81,7 @@ export function ComicHeader({
               </span>
             </div>
             <p className="text-xs sm:text-sm font-comic font-bold text-gray-700">
-              Verificación de Emergencias, Accesibilidad & Accesos Cívica
+              Verificación de Emergencias, Accesibilidad, Cultura Metro & Cívica
             </p>
           </div>
         </div>
