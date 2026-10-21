@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --comic-yellow: #FFD100;
+    --comic-green: #008752;
+    --comic-green-dark: #005A36;
+    --comic-red: #E52521;
+    --comic-blue: #0070BA;
+    --comic-ink: #111111;
+    --comic-paper: #FFFDF0;
+  }
+
+  body {
+    margin: 0;
+    background-color: #f6f3e7;
+    color: #111111;
+    font-family: 'Comic Neue', 'Fredoka', cursive, sans-serif;
+    background-image: 
+      radial-gradient(#111111 1.2px, transparent 1.2px),
+      radial-gradient(#111111 1.2px, #f6f3e7 1.2px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Comic Fonts */
+.font-bangers {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+
+.font-comic {
+  font-family: 'Comic Neue', cursive, sans-serif;
+}
+
+.font-fredoka {
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Comic Hard Shadows & Borders */
+.comic-border {
+  border: 3.5px solid #111111;
+}
+
+.comic-border-thick {
+  border: 5px solid #111111;
+}
+
+.comic-shadow {
+  box-shadow: 5px 5px 0px #111111;
+}
+
+.comic-shadow-lg {
+  box-shadow: 8px 8px 0px #111111;
+}
+
+.comic-shadow-sm {
+  box-shadow: 3px 3px 0px #111111;
+}
+
+.comic-shadow-red {
+  box-shadow: 5px 5px 0px #E52521;
+}
+
+.comic-shadow-yellow {
+  box-shadow: 5px 5px 0px #FFD100;
+}
+
+.comic-shadow-green {
+  box-shadow: 5px 5px 0px #008752;
+}
+
+.comic-btn {
+  border: 3.5px solid #111111;
+  box-shadow: 4px 4px 0px #111111;
+  transition: all 0.12s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.comic-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #111111;
+}
+
+.comic-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #111111;
+}
+
+/* Halftone Pop-art Patterns */
+.bg-halftone-yellow {
+  background-color: #FFD100;
+  background-image: radial-gradient(#d69e00 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.bg-halftone-green {
+  background-color: #008752;
+  background-image: radial-gradient(#005a36 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.bg-halftone-red {
+  background-color: #E52521;
+  background-image: radial-gradient(#a3120f 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.bg-halftone-blue {
+  background-color: #0070BA;
+  background-image: radial-gradient(#004c80 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.bg-comic-paper {
+  background-color: #FFFDF0;
+}
+
+/* Comic Speech Bubble Tail */
+.speech-bubble-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -16px;
+  left: 32px;
+  border-width: 16px 16px 0;
+  border-style: solid;
+  border-color: #FFFDF0 transparent;
+  display: block;
+  width: 0;
+}
+
+.speech-bubble-bottom::before {
+  content: '';
+  position: absolute;
+  bottom: -21px;
+  left: 29px;
+  border-width: 19px 19px 0;
+  border-style: solid;
+  border-color: #111111 transparent;
+  display: block;
+  width: 0;
+}
+
+/* Onomatopoeia animations */
+@keyframes comic-bounce {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg) scale(1.05);
+  }
+}
+
+@keyframes comic-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-10deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.15) rotate(4deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-comic-bounce {
+  animation: comic-bounce 2s infinite ease-in-out;
+}
+
+.animate-comic-pulse {
+  animation: comic-pulse 1.5s infinite ease-in-out;
+}
+
+.animate-pop-in {
+  animation: pop-in 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Custom scrollbar comic */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF0;
+  border-left: 3px solid #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD100;
+  border: 3px solid #111111;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #008752;
+}
