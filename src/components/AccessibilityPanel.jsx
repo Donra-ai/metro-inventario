@@ -20,13 +20,14 @@ export function AccessibilityPanel({ station, onSelectItem }) {
   const accessibilityCards = [
     {
       id: 'acc-card-1',
-      title: 'ASCENSORES PANORÁMICOS PMR',
-      count: `${accessibility.elevatorsCount} UNIDADES`,
+      title: 'ASCENSOR PANORÁMICO PMR',
+      count: `${accessibility.elevatorsCount} UNIDAD`,
       icon: ArrowUpDown,
       accent: 'bg-[#008752] text-white',
-      badge: 'CABINAS ACCESIBLES',
+      badge: 'ACCESO NORTE',
+      image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=800&q=80',
       description: accessibility.elevatorsDetails,
-      specs: 'Capacidad de 1.000 kg (13 personas), velocidad de 1 m/s, botoneras en relieve y braille a 90 cm, sintetizador vocal en español e inglés.'
+      specs: 'Capacidad de 1.000 kg (13 personas), velocidad de 1 m/s, botoneras en relieve y braille a 90 cm.'
     },
     {
       id: 'acc-card-2',
@@ -35,8 +36,9 @@ export function AccessibilityPanel({ station, onSelectItem }) {
       icon: Footprints,
       accent: 'bg-[#FFD100] text-black',
       badge: 'GUÍAS HÁPTICAS',
+      image: 'https://images.unsplash.com/photo-1572945550772-5205e45c71d6?auto=format&fit=crop&w=800&q=80',
       description: accessibility.podotactileCoverage,
-      specs: 'Baldosas de botones de advertencia en bordes de andén y descanso de escaleras + franjas direccionales de avance en pisos de mezanina.'
+      specs: 'Baldosas de botones de advertencia en bordes de andén y descanso de escaleras + franjas direccionales.'
     },
     {
       id: 'acc-card-3',
@@ -45,38 +47,42 @@ export function AccessibilityPanel({ station, onSelectItem }) {
       icon: Accessibility,
       accent: 'bg-[#0070BA] text-white',
       badge: 'PASO EXPEDITO',
+      image: 'https://images.unsplash.com/photo-1517649763962-0c623266ddc0?auto=format&fit=crop&w=800&q=80',
       description: accessibility.accessibleGatesDetails,
-      specs: 'Paso libre útil de 92 cm a 95 cm con sensor fotoeléctrico bidireccional y apertura automática para personas con movilidad reducida o coches de bebé.'
+      specs: 'Paso libre útil de 92 cm con sensor fotoeléctrico y apertura automática para sillas de ruedas.'
     },
     {
       id: 'acc-card-4',
-      title: 'RAMPAS PEATONALES Y PASAMANOS',
-      count: 'PENDIENTE < 8%',
+      title: 'PLATAFORMAS PMR SALVAESCALERAS',
+      count: '2 PLATAFORMAS',
       icon: CheckCircle,
       accent: 'bg-[#E52521] text-white',
-      badge: 'CIRCULACIÓN FLUIDA',
-      description: accessibility.wheelchairRamps,
-      specs: 'Pasamanos tubulares dobles en acero inoxidable a 70 cm (niños y talla baja) y 90 cm (adultos) con remates redondeados de seguridad.'
+      badge: 'MEZANINE A ANDENES',
+      image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80',
+      description: accessibility.platformsPmrDetails,
+      specs: 'Salvaescaleras mecánicas: 1 hacia Plataforma B y 1 hacia Plataforma A en mezanine norte-centro.'
     },
     {
       id: 'acc-card-5',
-      title: 'INTERFONOS SOS Y COMUNICACIÓN',
-      count: 'AUDIO & LUZ',
+      title: 'ESCALERAS ELECTROMECÁNICAS',
+      count: '3 ESCALERAS',
       icon: Radio,
       accent: 'bg-emerald-600 text-white',
-      badge: 'ASISTENCIA 24/7',
-      description: accessibility.audioAssistance,
-      specs: 'Interfonos de auxilio colocados a 100 cm del suelo con baliza estroboscópica azul para personas sordas y comunicación directa al PML.'
+      badge: 'PATIO NORTE Y ANDENES',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+      description: accessibility.escalatorsDetails,
+      specs: '1 escalera de la calle al patio norte, y 2 de mezanine norte-norte hacia plataformas A y B.'
     },
     {
       id: 'acc-card-6',
-      title: 'SEÑALÉTICA BRAILLE Y PLANOS HÁPTICOS',
-      count: 'ALTO RELIEVE',
+      title: 'APOYOS ISQUIÁTICOS EN ANDENES',
+      count: '6 APOYOS',
       icon: Eye,
       accent: 'bg-purple-600 text-white',
-      badge: 'SISTEMA BRAILLE',
-      description: accessibility.brailleSignage,
-      specs: 'Planos hápticos en relieve termoformado en los accesos de la estación y numeración braille en los pasamanos de cada escalera fija.'
+      badge: 'ANDENES A Y B',
+      image: 'https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&w=800&q=80',
+      description: accessibility.ischiaticSupports,
+      specs: '3 apoyos de descanso ergonómicos en Plataforma A y 3 en Plataforma B.'
     }
   ];
 
@@ -132,35 +138,44 @@ export function AccessibilityPanel({ station, onSelectItem }) {
                   verified: true
                 });
               }}
-              className="bg-white border-4 border-black comic-shadow rounded-xl p-5 flex flex-col justify-between hover:-translate-y-1.5 transition-transform cursor-pointer group"
+              className="bg-white border-4 border-black comic-shadow rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 transition-transform cursor-pointer group"
             >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className={`w-10 h-10 rounded-full border-3 border-black flex items-center justify-center ${card.accent} comic-shadow-sm`}>
-                    <Icon className="w-5 h-5" />
+              {/* Photo Banner */}
+              {card.image && (
+                <div className="relative h-44 w-full bg-gray-100 border-b-3 border-black overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-[#111111] text-[#FFD100] text-xs font-bangers px-2.5 py-0.5 border-2 border-black rounded comic-shadow-sm">
+                    {card.badge}
                   </div>
-                  <span className="text-[11px] font-bangers px-2 py-0.5 border-2 border-black rounded bg-gray-100 text-gray-800">
+                  <div className="absolute top-2.5 right-2.5 text-[10px] font-bangers px-2 py-0.5 border-2 border-black rounded bg-white text-black">
                     {card.count}
-                  </span>
+                  </div>
+                </div>
+              )}
+
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+                <div>
+                  <h3 className="text-xl font-bangers text-[#111111] group-hover:text-[#008752] transition-colors leading-tight mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-xs font-comic text-gray-800 leading-relaxed mb-3">
+                    {card.description}
+                  </p>
+                  <div className="bg-[#FFF8E7] border border-black p-2.5 rounded-lg text-xs font-comic">
+                    <span className="font-bold text-gray-600 block text-[10px] uppercase">ESPECIFICACIÓN TÉCNICA:</span>
+                    <span className="text-gray-900">{card.specs}</span>
+                  </div>
                 </div>
 
-                <h3 className="text-xl font-bangers text-[#111111] group-hover:text-[#008752] transition-colors leading-tight mb-2">
-                  {card.title}
-                </h3>
-
-                <p className="text-xs font-comic text-gray-800 leading-relaxed mb-3">
-                  {card.description}
-                </p>
-
-                <div className="bg-[#FFF8E7] border border-black p-2.5 rounded-lg text-xs font-comic">
-                  <span className="font-bold text-gray-600 block text-[10px] uppercase">ESPECIFICACIÓN TÉCNICA:</span>
-                  <span className="text-gray-900">{card.specs}</span>
+                <div className="pt-3 border-t-2 border-dashed border-gray-300 flex items-center justify-between text-xs font-bangers text-[#008752]">
+                  <span>CONSULTAR ESPECIFICACIONES</span>
+                  <span className="text-sm">→</span>
                 </div>
-              </div>
-
-              <div className="pt-3 mt-3 border-t-2 border-dashed border-gray-300 flex items-center justify-between text-xs font-bangers text-[#008752]">
-                <span>CONSULTAR ESPECIFICACIONES</span>
-                <span className="text-sm">→</span>
               </div>
             </div>
           );

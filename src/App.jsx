@@ -14,7 +14,7 @@ import { Train, Sparkles, AlertCircle, Heart, Shield } from 'lucide-react';
 
 export function App() {
   const [stations] = useState(METRO_STATIONS);
-  const [currentStationId, setCurrentStationId] = useState('san-antonio');
+  const [currentStationId, setCurrentStationId] = useState('parque-berrio');
   const [activeTab, setActiveTab] = useState('inventory');
   const [soundOn, setSoundOn] = useState(true);
 
@@ -120,38 +120,50 @@ export function App() {
             }}
           />
 
-          <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-            {/* Inspector Avatar with Speaking Animation */}
-            <div className="flex flex-col items-center shrink-0">
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-5">
+            <div className="flex items-center gap-4 text-center md:text-left">
               <div 
-                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-black comic-shadow flex items-center justify-center animate-comic-bounce"
-                style={{ backgroundColor: currentStation.accentColor }}
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-4 border-black comic-shadow flex items-center justify-center shrink-0 bg-[#008752]"
               >
-                <Train className="w-12 h-12 text-[#FFD100]" />
+                <Train className="w-10 h-10 text-[#FFD100]" />
               </div>
-              <span className="mt-2 text-xs font-bangers text-[#111111] bg-[#FFD100] px-2 py-0.5 border border-black rounded">
-                {currentStation.lineBadge}
-              </span>
+
+              <div>
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-1">
+                  <span className="bg-[#111111] text-[#FFD100] text-xs font-bangers px-2.5 py-0.5 border border-black rounded">
+                    PARQUE BERRÍO (BER)
+                  </span>
+                  <span className="bg-[#008752] text-white text-xs font-bangers px-2 py-0.5 border border-black rounded">
+                    LIBRETA OFICIAL DR0292 v4
+                  </span>
+                </div>
+                <h2 className="text-xl sm:text-2xl font-bangers text-[#111111] leading-tight">
+                  INSPECCIÓN VISUAL DE SEGURIDAD & EMERGENCIAS
+                </h2>
+                <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-1.5 text-[11px] font-comic font-bold text-gray-700">
+                  <span className="bg-emerald-100 text-emerald-800 px-2 py-0.5 border border-emerald-800 rounded">
+                    ✓ Viaducto Elevado
+                  </span>
+                  <span className="bg-amber-100 text-amber-800 px-2 py-0.5 border border-amber-800 rounded">
+                    ✓ 4 Accesos Urbanos
+                  </span>
+                  <span className="bg-blue-100 text-blue-800 px-2 py-0.5 border border-blue-800 rounded">
+                    ✓ 20 Torniquetes
+                  </span>
+                  <span className="bg-yellow-100 text-yellow-900 px-2 py-0.5 border border-yellow-800 rounded">
+                    ✓ 1 MRA Cívica
+                  </span>
+                </div>
+              </div>
             </div>
 
-            {/* Speech Dialogue Box */}
-            <div className="flex-1 text-center md:text-left">
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-1.5">
-                <span className="bg-[#111111] text-[#FFD100] text-xs font-bangers px-2.5 py-0.5 border border-black uppercase tracking-wider">
-                  ESTACIÓN: {currentStation.name.toUpperCase()}
-                </span>
-                <span className="bg-[#008752] text-white text-xs font-bangers px-2.5 py-0.5 border border-black">
-                  {currentStation.type}
-                </span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bangers text-[#111111] leading-tight mb-2">
-                "{currentStation.heroTagline}"
-              </h2>
-              <div className="bg-white border-2 border-black p-3 rounded-xl comic-shadow-sm">
-                <p className="text-xs sm:text-sm font-comic text-gray-800 leading-relaxed italic">
-                  "{currentStation.heroSpeech}"
-                </p>
-              </div>
+            {/* Visual Photo Thumbnail of the station */}
+            <div className="hidden lg:block w-48 h-24 rounded-xl border-3 border-black overflow-hidden comic-shadow-sm shrink-0">
+              <img
+                src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=600&q=80"
+                alt="Parque Berrío"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

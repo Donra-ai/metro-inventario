@@ -127,18 +127,27 @@ export function LocativeDetailsPanel({ station, onSelectItem }) {
                 playComicPop();
                 onSelectItem(mp);
               }}
-              className="bg-white border-4 border-black comic-shadow rounded-xl p-5 flex flex-col justify-between hover:-translate-y-1 transition-transform cursor-pointer group"
+              className="bg-white border-4 border-black comic-shadow rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-transform cursor-pointer group"
             >
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <span className="w-8 h-8 rounded-full bg-[#008752] text-white border-2 border-black flex items-center justify-center font-bangers text-sm">
-                    {idx + 1}
-                  </span>
-                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bangers px-2 py-0.5 border border-emerald-800 rounded">
+              {/* Image banner */}
+              {mp.image && (
+                <div className="relative h-44 w-full bg-gray-100 border-b-3 border-black overflow-hidden">
+                  <img
+                    src={mp.image}
+                    alt={mp.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-[#008752] text-white text-xs font-bangers px-2 py-0.5 border-2 border-black rounded comic-shadow-sm">
+                    P.E {idx + 1}
+                  </div>
+                  <div className="absolute top-2.5 right-2.5 bg-white text-black text-[10px] font-bangers px-2 py-0.5 border-2 border-black rounded">
                     {mp.status}
-                  </span>
+                  </div>
                 </div>
+              )}
 
+              <div className="p-4">
                 <h3 className="text-xl font-bangers text-[#111111] group-hover:text-[#008752] transition-colors leading-tight mb-2">
                   {mp.name}
                 </h3>
@@ -201,19 +210,28 @@ export function LocativeDetailsPanel({ station, onSelectItem }) {
                 playComicPop();
                 onSelectItem(room);
               }}
-              className="bg-white border-4 border-black comic-shadow rounded-xl p-5 flex flex-col justify-between hover:-translate-y-1 transition-transform cursor-pointer group"
+              className="bg-white border-4 border-black comic-shadow rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-transform cursor-pointer group"
             >
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="bg-[#111111] text-[#FFD100] text-xs font-bangers px-2 py-0.5 border border-black rounded">
+              {/* Room Image */}
+              {room.image && (
+                <div className="relative h-40 w-full bg-gray-100 border-b-3 border-black overflow-hidden">
+                  <img
+                    src={room.image}
+                    alt={room.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-[#111111] text-[#FFD100] text-xs font-bangers px-2 py-0.5 border border-black rounded">
                     {room.code}
-                  </span>
-                  <span className="text-[10px] font-bangers px-2 py-0.5 bg-red-100 text-red-800 border border-red-800 rounded flex items-center gap-1">
+                  </div>
+                  <div className="absolute top-2.5 right-2.5 text-[10px] font-bangers px-2 py-0.5 bg-red-100 text-red-800 border border-red-800 rounded flex items-center gap-1">
                     <Lock className="w-3 h-3" />
                     RESTRINGIDO
-                  </span>
+                  </div>
                 </div>
+              )}
 
+              <div className="p-4">
                 <h3 className="text-xl font-bangers text-[#111111] group-hover:text-[#0070BA] transition-colors leading-tight mb-2">
                   {room.name}
                 </h3>

@@ -111,38 +111,19 @@ export function ComicHeader({
         </div>
       </div>
 
-      {/* Station Selector Comic Strip */}
-      <div className="bg-[#f2efe4] border-t-3 border-b-3 border-black px-4 py-2.5">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-2 text-xs font-bangers uppercase tracking-wider text-black">
-            <MapPin className="w-4 h-4 text-[#E52521]" />
-            <span>SELECCIONA LA ESTACIÓN DEL METRO:</span>
+      {/* Active Station Strip (Parque Berrío BER) */}
+      <div className="bg-[#f2efe4] border-t-3 border-b-3 border-black px-4 py-2">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-bangers">
+          <div className="flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full bg-[#008752] border border-black animate-pulse"></span>
+            <span className="text-gray-900 tracking-wider">ESTACIÓN ACTIVA:</span>
+            <span className="bg-[#FFD100] text-black px-2.5 py-0.5 border-2 border-black rounded text-sm">
+              PARQUE BERRÍO (BER) • LÍNEA A
+            </span>
           </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            {stations.map((st) => {
-              const isSelected = st.id === currentStation.id;
-              return (
-                <button
-                  key={st.id}
-                  onClick={() => handleStationChange(st)}
-                  className={`comic-btn px-3 py-1.5 text-xs sm:text-sm font-bangers transition-all flex items-center gap-1.5 ${
-                    isSelected
-                      ? 'bg-[#FFD100] text-black scale-105 border-4 border-black comic-shadow-sm ring-2 ring-black'
-                      : 'bg-white text-gray-800 hover:bg-yellow-100'
-                  }`}
-                >
-                  <span className={`w-2.5 h-2.5 rounded-full border border-black ${
-                    st.id === 'san-antonio' ? 'bg-emerald-600' :
-                    st.id === 'parque-berrio' ? 'bg-green-500' :
-                    st.id === 'poblado' ? 'bg-amber-500' :
-                    st.id === 'acevedo' ? 'bg-blue-600' : 'bg-orange-600'
-                  }`}></span>
-                  <span>{st.name}</span>
-                  {isSelected && <span className="text-xs text-[#E52521]">★</span>}
-                </button>
-              );
-            })}
+          <div className="flex items-center gap-2 text-gray-700 font-comic text-[11px]">
+            <span className="bg-white px-2 py-0.5 border border-black rounded">Libreta Oficial: <strong>DR0292 v4</strong></span>
+            <span className="bg-white px-2 py-0.5 border border-black rounded">Viaducto • 4 Accesos • 20 Torniquetes</span>
           </div>
         </div>
       </div>

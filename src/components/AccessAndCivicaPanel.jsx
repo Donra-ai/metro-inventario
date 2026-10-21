@@ -86,25 +86,32 @@ export function AccessAndCivicaPanel({ station, onSelectItem }) {
                 verified: true
               });
             }}
-            className="bg-[#FFFDF0] border-4 border-black comic-shadow rounded-2xl p-5 flex flex-col justify-between hover:-translate-y-1 transition-transform cursor-pointer group"
+            className="bg-[#FFFDF0] border-4 border-black comic-shadow rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-transform cursor-pointer group"
           >
-            <div>
+            {/* Access Photo Banner */}
+            {acc.image && (
+              <div className="relative h-44 w-full bg-gray-100 border-b-3 border-black overflow-hidden">
+                <img
+                  src={acc.image}
+                  alt={acc.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div className="absolute top-2.5 left-2.5 bg-[#111111] text-[#FFD100] text-xs font-bangers px-2.5 py-0.5 border-2 border-black rounded comic-shadow-sm">
+                  ACCESO {idx + 1}
+                </div>
+                <div className="absolute top-2.5 right-2.5 bg-[#FFD100] text-black font-bangers text-xs px-2.5 py-0.5 border-2 border-black rounded">
+                  {acc.totalTurnstiles} TORNIQUETES
+                </div>
+              </div>
+            )}
+
+            <div className="p-4 sm:p-5">
               {/* Header of Access */}
               <div className="flex items-start justify-between gap-3 mb-3">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-6 h-6 rounded-full bg-[#111111] text-[#FFD100] border-2 border-black flex items-center justify-center font-bangers text-xs">
-                      {idx + 1}
-                    </span>
-                    <span className="text-xs font-mono font-bold text-gray-500 uppercase">
-                      ACCESO DE ESTACIÓN
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bangers text-[#111111] group-hover:text-[#008752] transition-colors leading-tight">
-                    {acc.name}
-                  </h3>
-                </div>
-
+                <h3 className="text-2xl font-bangers text-[#111111] group-hover:text-[#008752] transition-colors leading-tight">
+                  {acc.name}
+                </h3>
                 <span className="bg-[#FFD100] text-black font-bangers text-xs px-2.5 py-1 border-2 border-black rounded shrink-0">
                   {acc.totalTurnstiles} TORNIQUETES
                 </span>
